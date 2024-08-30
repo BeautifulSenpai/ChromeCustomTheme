@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>New Tab</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: transparent;
+            background-size: cover;
+            background-position: center;
+            transition: background-image 1s ease-in-out, opacity 0.5s ease-in-out;
+            opacity: 0;
+        }
+
+        #search-container {
+            text-align: center;
+        }
+
+        #search-box {
+            width: 400px;
+            height: 40px;
+            padding: 10px;
+            font-size: 18px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="search-container">
+        <input type="text" id="search-box" placeholder="Search Google or type a URL">
+    </div>
+    <script src="../js/newtab.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Settings</title>
+    <style>
+        :root {
+            --bg-color-light: #ffffff;
+            --bg-color-dark: #333333;
+            --border-color-light: #e0e0e0;
+            --border-color-dark: #555555;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            width: 300px;
+            padding: 10px;
+            margin: 0;
+            box-sizing: border-box;
+            opacity: 0;
+            transform: scale(0.95);
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+            will-change: opacity, transform;
+            overflow: hidden;
+        }
+        
+        body.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        @media (prefers-color-scheme: light) {
+            body {
+                background-color: var(--bg-color-light);
+            }
+            .image-option {
+                border: 2px solid var(--border-color-light);
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: var(--bg-color-dark);
+                color: #ffffff;
+            }
+            .image-option {
+                border: 2px solid var(--border-color-dark);
+            }
+        }
+
+        h2 {
+            text-align: center;
+            color: inherit;
+        }
+        
+        #image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .image-option {
+            width: 48%;
+            margin-bottom: 10px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: border-color 0.3s;
+        }
+
+        .image-option:hover {
+            border-color: #007bff;
+        }
+
+        #custom-upload, #resetBackground {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        #custom-upload {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Background Settings</h2>
+    <div id="image-container">
+        <img src="../images/default1tiny.jpg"
+        class="image-option" loading="lazy" data-full="../images/default1.jpg">
+        <img src="../images/default2tiny.jpg"
+        class="image-option" loading="lazy" data-full="../images/default2.jpg">
+    </div>
+    <input type="file" id="uploadImage" accept="image/*">
+    <button id="resetBackground">Reset</button>
+    <script src="../js/popup.js" defer></script>
+</body>
+</html>
